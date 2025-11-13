@@ -1,20 +1,24 @@
-import type { MetaFunction } from "@remix-run/node";
-import { useState } from "react";
-import { Navbar } from "~/components/navbar.jsx";
-import { OrderForm } from "~/components/order-form.jsx";
-import { EventForm } from "~/components/event-form.jsx";
-import { api } from "~/services/api";
+import { useState, useEffect } from "react";
+import { Navbar } from "~/app/components/navbar";
+import { OrderForm } from "~/app/components/order-form";
+import { EventForm } from "~/app/components/event-form";
+import { api } from "~/app/services/api";
 import { Card, CardBody, CardHeader } from "@heroui/react";
-import type { OrderOutDTO, TicketOutDTO, OrderInDTO, EventInDTO } from "~/types";
-
-export const meta: MetaFunction = () => {
-  return [
-    { title: "API REST Client" },
-    { name: "description", content: "Cliente simple para API REST" },
-  ];
-};
+import type { OrderOutDTO, TicketOutDTO, OrderInDTO, EventInDTO } from "~/app/types";
 
 export default function Index() {
+  useEffect(() => {
+    document.title = "API REST Client";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Cliente simple para API REST");
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content = "Cliente simple para API REST";
+      document.head.appendChild(meta);
+    }
+  }, []);
   const [orderResponse, setOrderResponse] = useState<OrderOutDTO | null>(null);
   const [eventResponse, setEventResponse] = useState<TicketOutDTO | null>(null);
   const [isLoadingOrder, setIsLoadingOrder] = useState(false);

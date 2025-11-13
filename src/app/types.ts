@@ -78,3 +78,4 @@ export interface ErrorResponse {
   timestamp: string;
   path?: string;
 }
+

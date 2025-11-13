@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button, Card, CardBody, CardHeader, Input, Select, SelectItem, Textarea } from "@heroui/react";
-import type { EventInDTO, EVENT_TYPE } from "~/types";
+import type { EventInDTO, EVENT_TYPE } from "~/app/types";
 
 interface EventFormProps {
   onSubmit: (event: EventInDTO) => Promise<void>;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button, Card, CardBody, CardHeader, Input } from "@heroui/react";
-import type { OrderInDTO } from "~/types";
+import type { OrderInDTO } from "~/app/types";
 
 interface OrderFormProps {
   onSubmit: (order: OrderInDTO) => Promise<void>;

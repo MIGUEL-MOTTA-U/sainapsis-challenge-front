@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@config "../tailwind.config.js";
+@config "../../tailwind.config.js";
 
 html,
 body {
@@ -10,3 +10,4 @@ body {
     color-scheme: dark;
   }
 }
+
