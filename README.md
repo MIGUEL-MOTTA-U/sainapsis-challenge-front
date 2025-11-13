@@ -7,8 +7,8 @@ Cliente frontend para consumir API REST de órdenes y eventos.
 - React 19
 - Vite 7
 - HeroUI v2
-- Tailwind CSS
 - TypeScript
+- Tailwind CSS
 
 ## Instalación
 
